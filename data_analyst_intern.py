@@ -32,17 +32,10 @@ for story in all_stories:
 import csv
 #Write out csv file for table 1
 f = csv.writer(open("table1.csv", "w"))
-table1_columns = ["story_id", "story_name", "story_type", "estimate"]
-f.writerow(table1_columns) #first row in csv file which has column names
+#no need to write first row with column names because SQL doesn't handle that well
 for row in table1:
     f.writerow(row)
 #Write out csv file for table 2
 g = csv.writer(open("table2.csv", "w"))
-table2_columns = ["story_id", "requested_by_id", "owner_id"]
-g.writerow(table2_columns) #first row in csv file which has column names
 for row in table2:
     g.writerow(row)
-
-#SQL Database
-#Use SQL Server 2012 Management Studio
-#story_id and story_type has foreign key constrain from trble 1
